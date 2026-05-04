@@ -8,7 +8,11 @@ const aggregateRoutes = require('./routes/aggregate');
 
 const app = express();
 
-app.use(cors());
+app.use(cors({
+  origin: "https://fault-tolerant-data-processing-task.vercel.app",
+  methods: ["GET", "POST", "OPTIONS"],
+  allowedHeaders: ["Content-Type"]
+}));
 app.use(express.json());
 
 // Routes
